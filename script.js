@@ -1,37 +1,26 @@
- let userInput = document.querySelector ("#user-input");
+
+
+let userInput = document.querySelector ("#user-input");
 
 
 
  let todoListElement = document.querySelector("#todo-list");
 
-//orginalen
 
+let storedTodos = localStorage.getItem("todos");
+let convertedTodos = JSON.parse(storedTodos);
 
-let toStore = [1, 2, 3, 4];
-
-//Oversett og lagre LocalStorage
-
-let jsonToStore = JSON.stringify(toStore);
-localStorage.setItem("todos", jsonToStore);
-
-// Hent ut og oversett tilbake til JS
-
-let storedItem = localStorage.getItem("todos");
-let converted = JSON.parse(storedItem);
-
-//Log ut orginalen og det vi har hentet ut fra LocalStorage
-
-console.log (toStore);
-console.log (converted);
-
- let todos = [];
+ let todos = convertedTodos;
 
  //dette er det som kommer til å skje nåe brukeren trykker på knappen
 
+
+ renderTodos ();
+
+ 
  function handleSubmit (event) {
-
-
 event.preventDefault(); //forhindere nettsiden å laste inn på nytt (refresh)
+
 
 
 console.log("Creating Todo Object...");
@@ -41,23 +30,13 @@ console.log("Append new todo list");
 
 todos.push(newTodo);
 
-console.log("all todos to html...");
-todoListElement.innerHTML = "";
+console.log("Update the stord list");
+let jsonTodos = JSON.stringify(todos);
+localStorage.setItem("todos", jsonTodos);
 
-todos.forEach((todo, index) => {
+renderTodos();
 
-//Først lag det nye html gjøremål 
-let newTodoCard = createTodoCard(todo);
-
-// Legg det nye html element til listen
-
-todoListElement.append(newTodoCard);
-
-
-});
-
-
-}
+};
  
 userInput.addEventListener("submit", handleSubmit);
 
@@ -102,8 +81,28 @@ titleElement.textContent = todoObject.title;
 
 return todoCard; 
 
-
 }
 
 
- 
+//Denne har jobben å oppdatere HTML
+function renderTodos () { 
+   
+console.log("all todos to html...");
+todoListElement.innerHTML = "";
+
+todos.forEach((todo, index) => {
+
+//Først lag det nye html gjøremål 
+let newTodoCard = createTodoCard(todo);
+
+// Legg det nye html element til listen
+
+todoListElement.append(newTodoCard);
+
+
+
+}
+)
+;
+
+}
