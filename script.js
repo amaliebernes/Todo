@@ -70,7 +70,7 @@ function createTodoCard(todoObject) {
 
 
   //konfigruer elementene med korrekt verdier
-  todoCard.className ="bg-emerald-300";
+  todoCard.className ="bg-green-200 w-40";
   titleElement.className ="underline";
   deleteButton.className ="bg-red-400 px-4 py-2 rounded hover:bg-red-300";
 

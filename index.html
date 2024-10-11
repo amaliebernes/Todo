@@ -15,22 +15,22 @@
   </head>
   <body>
     <header>
-      <h1 class="text-center underline text-2xl">Todo List</h1>
+      <h1 class="text-center underline text-2xl text-orange-500">Todo List</h1>
     </header>
 
     <main>
       <!-- Her kommer gjøremålslisten 
       Her er input HTML-->
-      <form class="bg-purple-100 p-4 w-2/3" id="user-input">
+      <form class="bg-purple-100 p-4 w-2/3 flex flex-center gap-3 items-center p-4 m-4" id="user-input">
         <label for="todo">Gjøremål</label>
-        <input class="bg-purple-400 rounded-full" type="text" name="todo" id="todo" />
+        <input class="bg-indigo-300 rounded" type="text" name="todo" id="todo" />
 
         <button type="submit">Legg til</button>
       </form>
 
       <!-- Gjøremåls Listen-->
 
-      <ul id="todo-list">
+      <ul class="flex flex-col gap-3 items-center bg-slate-200 p-4 m-4 rounded-sm shadow-sm" id="todo-list">
 
        <!-- Eksempel HTML for gjøremåls kort--> 
 
