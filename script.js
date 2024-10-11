@@ -68,6 +68,7 @@ function createTodoCard(todoObject) {
   todoCard.append(titleElement);
    todoCard.append(deleteButton);
   //konfigruer elementene med korrekt verdier
+  todoCard.className ="bg-secondary";
 
   titleElement.textContent = todoObject.title;
   deleteButton.textContent = "Delete";
