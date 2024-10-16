@@ -27,6 +27,7 @@ function handleSubmit(event) {
   console.log("Creating Todo Object...");
   let newTodo = createTodoObject(userInput);
 
+
   console.log("Append new todo list");
 
   todos.push(newTodo);
@@ -34,6 +35,8 @@ function handleSubmit(event) {
   console.log("Update the stord list");
   let jsonTodos = JSON.stringify(todos);
   localStorage.setItem("todos", jsonTodos);
+
+  userInput.reset();
 
   renderTodos();
 }
@@ -70,7 +73,7 @@ function createTodoCard(todoObject) {
 
 
   //konfigruer elementene med korrekt verdier
-  todoCard.className ="bg-green-200 w-40";
+  todoCard.className ="bg-green-200 w-full flex justify-between";
   titleElement.className ="underline";
   deleteButton.className ="bg-red-400 px-4 py-2 rounded hover:bg-red-300";
 
