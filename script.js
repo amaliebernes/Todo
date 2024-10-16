@@ -65,6 +65,7 @@ function createTodoCard(todoObject) {
   let todoCard = document.createElement("li");
   let titleElement = document.createElement("h2");
   let deleteButton = document.createElement("button");
+  
 
   //sett de sammen til et
 
